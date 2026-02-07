@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Anvuu 💗</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #fff0f3;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Floating Animation Layer */
+        #bg-layer {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .float-item {
+            position: absolute;
+            bottom: -50px;
+            color: rgba(255, 77, 109, 0.2);
+            font-weight: bold;
+            animation: moveUp 6s linear infinite;
+        }
+        @keyframes moveUp {
+            to { transform: translateY(-110vh) rotate(20deg); opacity: 0; }
+        }
+
+        /* Container */
+        .container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+        }
+        .page {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        .active { display: flex; }
+
+        h1 { font-size: 2.2rem; color: #ff4d6d; margin-bottom: 15px; min-height: 3.5rem; }
+        p { font-size: 1.2rem; color: #555; max-width: 450px; line-height: 1.5; margin-bottom: 25px; min-height: 4.5rem; }
+
+        .btn-next {
+            padding: 15px 45px;
+            font-size: 1.1rem;
+            background: #ff4d6d;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.3);
+            transition: 0.3s;
+        }
+
+        /* Final Card */
+        .card {
+            background: white;
+            padding: 2.5rem 1.5rem;
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(255, 77, 109, 0.15);
+            max-width: 380px;
+            width: 90%;
+        }
+        .btn-group { display: flex; justify-content: center; gap: 15px; margin-top: 25px; }
+        .choice-btn { padding: 12px 25px; border-radius: 50px; border: none; font-weight: bold; cursor: pointer; }
+        #yesBtn { background: #ff4d6d; color: white; }
+        #noBtn { background: #adb5bd; color: white; transition: 0.1s; }
+
+        .footer-num { position: absolute; bottom: 25px; font-weight: bold; color: #ff8fa3; font-size: 0.8rem; letter-spacing: 1px; }
+    </style>
+</head>
+<body>
+
+    <div id="bg-layer"></div>
+
+    <div class="container">
+        <div class="page active" id="p1">
+            <h1 class="txt" data-msg="Yoo Anvuu!!!💗">Yoo Anvuu!!!💗</h1>
+            <p class="txt" data-msg="I built this specifically for you. Are you ready?">I built this specifically for you. Are you ready?</p>
+            <button class="btn-next" onclick="go(2)">Open My Heart →</button>
+            <span class="footer-num">PAGE 1 / 16</span>
+        </div>
+
+        <div class="page" id="p2" style="background: #ffe5ec;">
+            <h1 class="txt" data-msg="To the best man...">To the best man...</h1>
+            <p class="txt" data-msg="You are the most important part of my life, and I wanted you to know that.">You are the most important part of my life, and I wanted you to know that.</p>
+            <button class="btn-next" onclick="go(3)">Next →</button>
+            <span class="footer-num">PAGE 2 / 16</span>
+        </div>
+
+        <div class="page" id="p3">
+            <h1 class="txt" data-msg="My Peace 🫠">My Peace 🫠</h1>
+            <p class="txt" data-msg="When the world gets too loud, you are the only place I want to hide.">When the world gets too loud, you are the only place I want to hide.</p>
+            <button class="btn-next" onclick="go(4)">Continue →</button>
+            <span class="footer-num">PAGE 3 / 16</span>
+        </div>
+
+        <div class="page" id="p4" style="background: #ffcad4;">
+            <h1 class="txt" data-msg="Your Strength">Your Strength</h1>
+            <p class="txt" data-msg="I love how strong you are, and how safe you make me feel every single day.">I love how strong you are, and how safe you make me feel every single day.</p>
+            <button class="btn-next" onclick="go(5)">Next →</button>
+            <span class="footer-num">PAGE 4 / 16</span>
+        </div>
+
+        <div class="page" id="p5">
+            <h1 class="txt" data-msg="That Smile 💗">That Smile 💗</h1>
+            <p class="txt" data-msg="I promise, your smile is my favorite view in the whole world.">I promise, your smile is my favorite view in the whole world.</p>
+            <button class="btn-next" onclick="go(6)">Next →</button>
+            <span class="footer-num">PAGE 5 / 16</span>
+        </div>
+
+        <div class="page" id="p6" style="background: #f497ad;">
+            <h1 class="txt" style="color:white" data-msg="My Best Friend">My Best Friend</h1>
+            <p class="txt" style="color:white" data-msg="Before anything else, thank you for being my favorite person to talk to.">Before anything else, thank you for being my favorite person to talk to.</p>
+            <button class="btn-next" style="background:white; color:#f497ad" onclick="go(7)">Next →</button>
+            <span class="footer-num" style="color:white">PAGE 6 / 16</span>
+        </div>
+
+        <div class="page" id="p7">
+            <h1 class="txt" data-msg="The Little Things">The Little Things</h1>
+            <p class="txt" data-msg="It's not just the big things. I love the way you care in the small moments.">It's not just the big things. I love the way you care in the small moments.</p>
+            <button class="btn-next" onclick="go(8)">Continue →</button>
+            <span class="footer-num">PAGE 7 / 16</span>
+        </div>
+
+        <div class="page" id="p8" style="background: #ffb3c1;">
+            <h1 class="txt" data-msg="I Choose You">I Choose You</h1>
+            <p class="txt" data-msg="I chose you then, I choose you now, and I will choose you every single day.">I chose you then, I choose you now, and I will choose you every single day.</p>
+            <button class="btn-next" onclick="go(9)">Next →</button>
+            <span class="footer-num">PAGE 8 / 16</span>
+        </div>
+
+        <div class="page" id="p9">
+            <h1 class="txt" data-msg="Unlimited Love">Unlimited Love</h1>
+            <p class="txt" data-msg="I Love You So Much!!!💗 My heart is truly full because of you.">I Love You So Much!!!💗 My heart is truly full because of you.</p>
+            <button class="btn-next" onclick="go(10)">Next →</button>
+            <span class="footer-num">PAGE 9 / 16</span>
+        </div>
+
+        <div class="page" id="p10" style="background: #ff8fa3;">
+            <h1 class="txt" style="color:white" data-msg="Our Bond">Our Bond</h1>
+            <p class="txt" style="color:white" data-msg="What we share is rare and special. I wouldn't trade it for anything.">What we share is rare and special. I wouldn't trade it for anything.</p>
+            <button class="btn-next" style="background:white; color:#ff8fa3" onclick="go(11)">Next →</button>
+            <span class="footer-num" style="color:white">PAGE 10 / 16</span>
+        </div>
+
+        <div class="page" id="p11">
+            <h1 class="txt" data-msg="My Biggest Support">My Biggest Support</h1>
+            <p class="txt" data-msg="Thank you for standing by me and always believing in us.">Thank you for standing by me and always believing in us.</p>
+            <button class="btn-next" onclick="go(12)">Next →</button>
+            <span class="footer-num">PAGE 11 / 16</span>
+        </div>
+
+        <div class="page" id="p12" style="background: #ffc2d1;">
+            <h1 class="txt" data-msg="Our Future 💍">Our Future 💍</h1>
+            <p class="txt" data-msg="I can't wait to grow old with you and see where life takes us.">I can't wait to grow old with you and see where life takes us.</p>
+            <button class="btn-next" onclick="go(13)">Next →</button>
+            <span class="footer-num">PAGE 12 / 16</span>
+        </div>
+
+        <div class="page" id="p13">
+            <h1 class="txt" data-msg="Perfectly You">Perfectly You</h1>
+            <p class="txt" data-msg="Don't ever change. You are exactly who I've always wanted.">Don't ever change. You are exactly who I've always wanted.</p>
+            <button class="btn-next" onclick="go(14)">Next →</button>
+            <span class="footer-num">PAGE 13 / 16</span>
+        </div>
+
+        <div class="page" id="p14" style="background: #ff4d6d;">
+            <h1 class="txt" style="color:white" data-msg="Almost There...">Almost There...</h1>
+            <p class="txt" style="color:white" data-msg="I have one special wish and one big question left.">I have one special wish and one big question left.</p>
+            <button class="btn-next" style="background:white; color:#ff4d6d" onclick="go(15)">Continue →</button>
+            <span class="footer-num" style="color:white">PAGE 14 / 16</span>
+        </div>
+
+        <div class="page" id="p15">
+            <h1 class="txt" data-msg="Get Well Soon! 🩹">Get Well Soon! 🩹</h1>
+            <p class="txt" data-msg="I hate it when you're not feeling well. Rest up, babe! Sending you love. ✨">I hate it when you're not feeling well. Rest up, babe! Sending you love. ✨</p>
+            <button class="btn-next" onclick="go(16)">Final Page →</button>
+            <span class="footer-num">PAGE 15 / 16</span>
+        </div>
+
+        <div class="page" id="p16">
+            <div class="card" id="askCard">
+                <div style="font-size: 60px; margin-bottom: 10px;">🎁</div>
+                <h1>Yoo Anvuu!!!💗</h1>
+                <p>Will you be mine forever?</p>
+                <div class="btn-group">
+                    <button class="choice-btn" id="yesBtn" onclick="celebrate()">Yes!</button>
+                    <button class="choice-btn" id="noBtn" onmouseover="run()">No</button>
+                </div>
+            </div>
+            <div id="success" style="display:none">
+                <div style="font-size: 80px;">💍✨</div>
+                <h1 style="color:#ff4d6d">I'M YOURS!</h1>
+                <p>Happy Propose Day!!🫠✨<br>I Love You So Much!!!💗</p>
+            </div>
+            <span class="footer-num">PAGE 16 / 16</span>
+        </div>
+    </div>
+
+    <script>
+        function type(el) {
+            const message = el.getAttribute('data-msg');
+            let i = 0;
+            el.innerHTML = "";
+            const interval = setInterval(() => {
+                el.innerHTML += message.charAt(i);
+                i++;
+                if (i >= message.length) clearInterval(interval);
+            }, 40);
+        }
+
+        function go(n) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(p => p.classList.remove('active'));
+            const activePage = document.getElementById('p' + n);
+            activePage.classList.add('active');
+            activePage.querySelectorAll('.txt').forEach(t => type(t));
+        }
+
+        function startFloats() {
+            const layer = document.getElementById('bg-layer');
+            const items = ['Love', 'Next', '💗', 'Anvuu', 'Care', 'Mine'];
+            setInterval(() => {
+                const el = document.createElement('div');
+                el.className = 'float-item';
+                el.innerHTML = items[Math.floor(Math.random() * items.length)];
+                el.style.left = Math.random() * 90 + 'vw';
+                el.style.fontSize = Math.random() * 10 + 15 + 'px';
+                layer.appendChild(el);
+                setTimeout(() => el.remove(), 6000);
+            }, 600);
+        }
+
+        function run() {
+            const btn = document.getElementById('noBtn');
+            btn.style.position = 'fixed';
+            btn.style.left = Math.random() * 80 + 'vw';
+            btn.style.top = Math.random() * 80 + 'vh';
+        }
+
+        function celebrate() {
+            document.getElementById('askCard').style.display = 'none';
+            document.getElementById('success').style.display = 'block';
+            for(let i=0; i<60; i++) {
+                setTimeout(() => {
+                    const h = document.createElement('div');
+                    h.innerHTML = '💗';
+                    h.style.position = 'fixed';
+                    h.style.left = Math.random() * 100 + 'vw';
+                    h.style.top = '-20px';
+                    document.body.appendChild(h);
+                    h.animate([{transform:'translateY(0)'},{transform:'translateY(110vh) rotate(360deg)'}], {duration: 3000}).onfinish = () => h.remove();
+                }, i * 150);
+            }
+        }
+
+        window.onload = () => {
+            startFloats();
+            // Start typing first page manually
+            document.querySelectorAll('#p1 .txt').forEach(t => type(t));
+        };
+    </script>
+</body>
+  </html>
+  
