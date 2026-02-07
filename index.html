@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Anvuu | My Forever 💗</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #fff0f3;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Floating Background Elements */
+        .floating-container {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .float-text {
+            position: absolute;
+            bottom: -50px;
+            color: rgba(255, 77, 109, 0.2);
+            font-weight: bold;
+            font-size: 1.2rem;
+            animation: floatUp 6s linear infinite;
+        }
+
+        @keyframes floatUp {
+            to { transform: translateY(-110vh) rotate(20deg); opacity: 0; }
+        }
+
+        .page {
+            display: none;
+            width: 100%; height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            position: absolute;
+            z-index: 10;
+        }
+        .active { display: flex; }
+        
+        h1 { font-size: 2.2rem; color: #ff4d6d; margin-bottom: 20px; min-height: 3rem; }
+        p { font-size: 1.2rem; color: #555; max-width: 500px; min-height: 4rem; margin-bottom: 30px; }
+        
+        .next-btn {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.3);
+            transition: 0.3s;
+        }
+
+        .proposal-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(255, 77, 109, 0.2);
+            width: 90%; max-width: 400px;
+        }
+        .btn-group { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
+        .choice-btn { padding: 12px 25px; border-radius: 50px; border: none; font-weight: bold; cursor: pointer; }
+        #yesBtn { background: #ff4d6d; color: white; }
+        #noBtn { background: #adb5bd; color: white; position: relative; }
+
+        .ring-box { font-size: 70px; margin-bottom: 20px; animation: wobble 2s infinite; }
+        @keyframes wobble { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-10deg); } 75% { transform: rotate(10deg); } }
+        .page-num { position: absolute; bottom: 30px; color: #ff8fa3; font-weight: bold; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <div class="floating-container" id="floatLayer"></div>
+
+    <div class="page active" id="p1">
+        <h1 class="typewriter" data-text="Yoo Anvuu!!!💗"></h1>
+        <p class="typewriter" data-text="I built this little journey just for you. Ready to see?"></p>
+        <button class="next-btn" onclick="nextPage(2)">Open Book →</button>
+        <span class="page-num">1/16</span>
+    </div>
+
+    <div class="page" id="p2" style="background-color: #ffe5ec;">
+        <h1 class="typewriter" data-text="To my favorite man..."></h1>
+        <p class="typewriter" data-text="I wanted to show you exactly how much you mean to me."></p>
+        <button class="next-btn" onclick="nextPage(3)">Continue →</button>
+        <span class="page-num">2/16</span>
+    </div>
+
+    <div class="page" id="p3">
+        <h1 class="typewriter" data-text="My Safe Place 🫠"></h1>
+        <p class="typewriter" data-text="In your arms, everything feels perfect. You're my peace."></p>
+        <button class="next-btn" onclick="nextPage(4)">Next →</button>
+        <span class="page-num">3/16</span>
+    </div>
+
+    <div class="page" id="p4" style="background-color: #ffcad4;">
+        <h1 class="typewriter" data-text="Your Strength"></h1>
+        <p class="typewriter" data-text="I love how you always protect me and keep me safe."></p>
+        <button class="next-btn" onclick="nextPage(5)">Next →</button>
+        <span class="page-num">4/16</span>
+    </div>
+
+    <div class="page" id="p5">
+        <h1 class="typewriter" data-text="That Smile 💗"></h1>
+        <p class="typewriter" data-text="Your smile is literally the only thing I need to see today."></p>
+        <button class="next-btn" onclick="nextPage(6)">Next →</button>
+        <span class="page-num">5/16</span>
+    </div>
+
+    <div class="page" id="p6" style="background-color: #f497ad;">
+        <h1 class="typewriter" style="color: white;" data-text="Best Friend"></h1>
+        <p class="typewriter" style="color: white;" data-text="I'm so lucky that I fell for my best friend."></p>
+        <button class="next-btn" style="background: white; color: #f497ad;" onclick="nextPage(7)">Next →</button>
+        <span class="page-num" style="color: white;">6/16</span>
+    </div>
+
+    <div class="page" id="p7">
+        <h1 class="typewriter" data-text="The Small Things"></h1>
+        <p class="typewriter" data-text="The way you care for me in little ways means everything."></p>
+        <button class="next-btn" onclick="nextPage(8)">Next →</button>
+        <span class="page-num">7/16</span>
+    </div>
+
+    <div class="page" id="p8" style="background-color: #ffb3c1;">
+        <h1 class="typewriter" data-text="I Choose You"></h1>
+        <p class="typewriter" data-text="Today, tomorrow, and every single day for the rest of my life."></p>
+        <button class="next-btn" onclick="nextPage(9)">Next →</button>
+        <span class="page-num">8/16</span>
+    </div>
+
+    <div class="page" id="p9">
+        <h1 class="typewriter" data-text="No Limits"></h1>
+        <p class="typewriter" data-text="I Love You So Much!!!💗 More than words could ever show."></p>
+        <button class="next-btn" onclick="nextPage(10)">Next →</button>
+        <span class="page-num">9/16</span>
+    </div>
+
+    <div class="page" id="p10" style="background-color: #ff8fa3;">
+        <h1 class="typewriter" style="color: white;" data-text="Our Connection"></h1>
+        <p class="typewriter" style="color: white;" data-text="What we have is rare. It's magic. It's us."></p>
+        <button class="next-btn" style="background: white; color: #ff8fa3;" onclick="nextPage(11)">Next →</button>
+        <span class="page-num" style="color: white;">10/16</span>
+    </div>
+
+    <div class="page" id="p11">
+        <h1 class="typewriter" data-text="The Support"></h1>
+        <p class="typewriter" data-text="Thanks for believing in me, even when I don't believe in myself."></p>
+        <button class="next-btn" onclick="nextPage(12)">Next →</button>
+        <span class="page-num">11/16</span>
+    </div>
+
+    <div class="page" id="p12" style="background-color: #ff
+  
