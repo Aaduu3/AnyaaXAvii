@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolate Day for Anvuu 🍫</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #fdf0d5; font-family: 'Segoe UI', Arial, sans-serif; height: 100vh; overflow: hidden; display: flex; justify-content: center; align-items: center; position: relative; }
+        
+        /* Floating Chocolate Background */
+        #bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+        .float { position: absolute; bottom: -50px; color: rgba(102, 66, 41, 0.2); font-weight: bold; animation: up 6s linear infinite; }
+        @keyframes up { to { transform: translateY(-110vh) rotate(20deg); opacity: 0; } }
+
+        .page { display: none; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 25px; width: 100%; height: 100%; z-index: 10; position: absolute; }
+        .active { display: flex; }
+        
+        h1 { font-size: 2.2rem; color: #664229; margin-bottom: 15px; min-height: 1.2em; }
+        p { font-size: 1.2rem; color: #5e503f; max-width: 450px; margin-bottom: 30px; line-height: 1.5; min-height: 3em; }
+        
+        .btn { padding: 15px 40px; background: #664229; color: #fdf0d5; border: none; border-radius: 50px; cursor: pointer; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(102, 66, 41, 0.3); }
+        .footer-num { position: absolute; bottom: 20px; font-weight: bold; color: #8d6e63; font-size: 0.8rem; }
+
+        .card { background: white; padding: 35px; border-radius: 30px; border: 4px solid #664229; box-shadow: 0 10px 40px rgba(0,0,0,0.1); width: 90%; max-width: 400px; }
+        #noBtn { position: relative; margin-left: 10px; background: #adb5bd; color: white; padding: 12px 25px; border-radius: 50px; border: none; font-weight: bold; }
+        #yesBtn { background: #664229; color: #fdf0d5; padding: 12px 30px; border-radius: 50px; border: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div id="bg"></div>
+
+    <div class="page active" id="p1">
+        <h1>Happy Chocolate Day, Anvuu! 🍫</h1>
+        <p>I built this sweet surprise just for you. Ready to unwrap it?</p>
+        <button class="btn" onclick="go(2)">Unwrap Surprise →</button>
+        <span class="footer-num">1 / 16</span>
+    </div>
+
+    <div class="page" id="p2" style="background: #efe0d5;">
+        <h1 class="tw">Sweeter than Chocolate...</h1>
+        <p class="tw">No amount of Dairy Milk or Ferrero Rocher could ever be as sweet as you are to me.</p>
+        <button class="btn" onclick="go(3)">Next →</button>
+        <span class="footer-num">2 / 16</span>
+    </div>
+
+    <div class="page" id="p3">
+        <h1 class="tw">My Favorite Treat 🫠</h1>
+        <p class="tw">Your voice, your laugh, and your presence are the only cravings I have.</p>
+        <button class="btn" onclick="go(4)">Continue →</button>
+        <span class="footer-num">3 / 16</span>
+    </div>
+
+    <div class="page" id="p4" style="background: #ede0d4;">
+        <h1 class="tw">Pure Joy</h1>
+        <p class="tw">Like dark chocolate, you are rich and deep; like milk chocolate, you are warm and comforting.</p>
+        <button class="btn" onclick="go(5)">Next →</button>
+        <span class="footer-num">4 / 16</span>
+    </div>
+
+    <div class="page" id="p5">
+        <h1 class="tw">The Best Part 💗</h1>
+        <p class="tw">Even on my worst days, you are the one who makes everything feel sweet again.</p>
+        <button class="btn" onclick="go(6)">Next →</button>
+        <span class="footer-num">5 / 16</span>
+    </div>
+
+    <div class="page" id="p6" style="background: #664229;">
+        <h1 class="tw" style="color:#fdf0d5">My Strength</h1>
+        <p class="tw" style="color:#fdf0d5">You keep me going just like a quick chocolate fix! You're my energy.</p>
+        <button class="btn" style="background:#fdf0d5; color:#664229" onclick="go(7)">Next →</button>
+        <span class="footer-num" style="color:#fdf0d5">6 / 16</span>
+    </div>
+
+    <div class="page" id="p7">
+        <h1 class="tw">Sharing Life</h1>
+        <p class="tw">They say never share your chocolate, but I’d share my whole life with you.</p>
+        <button class="btn" onclick="go(8)">Continue →</button>
+        <span class="footer-num">7 / 16</span>
+    </div>
+
+    <div class="page" id="p8" style="background: #d7ccc8;">
+        <h1 class="tw">I Choose You</h1>
+        <p class="tw">In a box full of chocolates, I'd pick you every single time without looking.</p>
+        <button class="btn" onclick="go(9)">Next →</button>
+        <span class="footer-num">8 / 16</span>
+    </div>
+
+    <div class="page" id="p9">
+        <h1 class="tw">Unlimited Love</h1>
+        <p class="tw">I Love You So Much!!!💗 You are the sweetness in my soul.</p>
+        <button class="btn" onclick="go(10)">Next →</button>
+        <span class="footer-num">9 / 16</span>
+    </div>
+
+    <div class="page" id="p10" style="background: #8d6e63;">
+        <h1 class="tw" style="color:white">Our Bond</h1>
+        <p class="tw" style="color:white">We go together like hot cocoa and marshmallows. Perfectly matched.</p>
+        <button class="btn" style="background:white; color:#8d6e63" onclick="go(11)">Next →</button>
+        <span class="footer-num" style="color:white">10 / 16</span>
+    </div>
+
+    <div class="page" id="p11">
+        <h1 class="tw">My Support</h1>
+        <p class="tw">Thanks for always being there to melt away my worries.</p>
+        <button class="btn" onclick="go(12)">Next →</button>
+        <span class="footer-num">11 / 16</span>
+    </div>
+
+    <div class="page" id="p12" style="background: #efe0d5;">
+        <h1 class="tw">Our Future 💍</h1>
+        <p class="tw">I can't wait for all the sweet years we have ahead of us.</p>
+        <button class="btn" onclick="go(13)">Next →</button>
+        <span class="footer-num">12 / 16</span>
+    </div>
+
+    <div class="page" id="p13">
+        <h1 class="tw">Simply Sweet</h1>
+        <p class="tw">Anvuu, you are perfect. Don't ever let anyone tell you otherwise.</p>
+        <button class="btn" onclick="go(14)">Next →</button>
+        <span class="footer-num">13 / 16</span>
+    </div>
+
+    <div class="page" id="p14" style="background: #664229;">
+        <h1 class="tw" style="color:white">Just One More...</h1>
+        <p class="tw" style="color:white">Before we finish this box of surprises, I have a wish.</p>
+        <button class="btn" style="background:white; color:#664229" onclick="go(15)">Continue →</button>
+        <span class="footer-num" style="color:white">14 / 16</span>
+    </div>
+
+    <div class="page" id="p15">
+        <h1 class="tw">Get Well Soon! 🩹</h1>
+        <p class="tw">Eat some chocolate, get some rest, and feel better soon, my love! 🍫✨</p>
+        <button class="btn" onclick="go(16)">The Big Question →</button>
+        <span class="footer-num">15 / 16</span>
+    </div>
+
+    <div class="page" id="p16">
+        <div class="card" id="ask">
+            <div style="font-size: 50px; margin-bottom: 15px;">🍫</div>
+            <h1 style="color:#664229">Yoo Anvuu!!!💗</h1>
+            <p>Will you be my forever chocolate partner?</p>
+            <div style="margin-top:20px;">
+                <button id="yesBtn" onclick="done()">Yes!</button>
+                <button id="noBtn" onmouseover="move()">No</button>
+            </div>
+        </div>
+        <div id="yay" style="display:none">
+            <div style="font-size: 80px;">💍🍫</div>
+            <h1 style="color:#664229">I'M YOURS!</h1>
+            <p>Happy Chocolate Day, My Love!!🫠<br>I Love You So Much!!!💗</p>
+        </div>
+        <span class="footer-num">16 / 16</span>
+    </div>
+
+    <script>
+        function go(n) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            const next = document.getElementById('p' + n);
+            next.classList.add('active');
+            
+            next.querySelectorAll('.tw').forEach(el => {
+                const finalContent = el.innerHTML;
+                el.innerHTML = "";
+                let i = 0;
+                const timer = setInterval(() => {
+                    el.innerHTML += finalContent.charAt(i);
+                    i++;
+                    if(i >= finalContent.length) clearInterval(timer);
+                }, 40);
+            });
+        }
+
+        function move() {
+            const b = document.getElementById('noBtn');
+            b.style.position = 'fixed';
+            b.style.left = Math.random() * 80 + 'vw';
+            b.style.top = Math.random() * 80 + 'vh';
+        }
+
+        function done() {
+            document.getElementById('ask').style.display = 'none';
+            document.getElementById('yay').style.display = 'block';
+            for(let i=0; i<60; i++) {
+                setTimeout(() => {
+                    const h = document.createElement('div');
+                    h.innerHTML = ['🍫','💗','🍩'][Math.floor(Math.random()*3)];
+                    h.style.position = 'fixed';
+                    h.style.left = Math.random() * 100 + 'vw';
+                    h.style.top = '-20px';
+                    h.style.zIndex = '1000';
+                    document.body.appendChild(h);
+                    h.animate([{transform:'translateY(0)'},{transform:'translateY(110vh) rotate(360deg)'}], {duration: 3000}).onfinish = () => h.remove();
+                }, i * 150);
+            }
+        }
+
+        setInterval(() => {
+            const d = document.createElement('div');
+            d.className = 'float';
+            d.innerHTML = ["Chocolate","Anvuu","🍫","Next","Sweet"][Math.floor(Math.random()*5)];
+            d.style.left = Math.random() * 100 + 'vw';
+            d.style.fontSize = Math.random() * 10 + 15 + 'px';
+            document.getElementById('bg').appendChild(d);
+            setTimeout(() => d.remove(), 6000);
+        }, 700);
+    </script>
+</body>
+  </html>
+  
