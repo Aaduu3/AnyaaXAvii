@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Anvu 🍫</title>
+    <style>
+        :root {
+            --cocoa: #3e2723;
+            --milk-choc: #795548;
+            --pink: #ff80ab;
+            --cream: #fff8e1;
+        }
+
+        body {
+            background-color: var(--cocoa);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            color: var(--cocoa);
+        }
+
+        .container {
+            background: var(--cream);
+            width: 320px;
+            height: 480px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            border: 5px solid var(--pink);
+        }
+
+        .page {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        h1 { color: var(--milk-choc); font-size: 22px; margin-bottom: 10px; }
+        p { font-size: 17px; line-height: 1.5; margin-bottom: 15px; }
+        .emoji { font-size: 45px; margin-bottom: 15px; }
+
+        button {
+            background: var(--pink);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        button:hover { transform: scale(1.05); }
+
+        .choco-pop {
+            position: absolute;
+            font-size: 30px;
+            pointer-events: none;
+            z-index: 100;
+            animation: flyUp 2s linear forwards;
+        }
+
+        @keyframes flyUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .progress {
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            font-size: 11px;
+            color: #bcaaa4;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="page active" id="p1">
+        <div class="emoji">🍫</div>
+        <h1>Hey Anvu!</h1>
+        <p>I have a special Chocolate Day surprise just for you...</p>
+        <button onclick="nextPage(2)">Open it ✨</button>
+    </div>
+
+    <div class="page" id="p2">
+        <div class="emoji">🩹</div>
+        <p>But first, I know you're not feeling your best right now.</p>
+        <button onclick="nextPage(3)">Next</button>
+    </div>
+
+    <div class="page" id="p3">
+        <div class="emoji">💊</div>
+        <h1>Get Well Soon!</h1>
+        <p>I'm sending you all my love and healing energy. Please rest up!</p>
+        <button onclick="nextPage(4)">Next</button>
+    </div>
+
+    <div class="page" id="p4">
+        <div class="emoji">🧸</div>
+        <p>I really wish I could be there to take care of you today.</p>
+        <button onclick="nextPage(5)">Next</button>
+    </div>
+
+    <div class="page" id="p5">
+        <div class="emoji">☕</div>
+        <p>Since I can't be there, I brought some virtual treats to cheer you up!</p>
+        <button onclick="nextPage(6)">See treats</button>
+    </div>
+
+    <div class="page" id="p6">
+        <div class="emoji">🍩</div>
+        <p>A chocolate donut because you are the sweetest guy ever.</p>
+        <button onclick="nextPage(7)">Next</button>
+    </div>
+
+    <div class="page" id="p7">
+        <div class="emoji">🍪</div>
+        <p>A cookie, because you're so strong even when you're sick!</p>
+        <button onclick="nextPage(8)">Next</button>
+    </div>
+
+    <div class="page" id="p8">
+        <div class="emoji">🍦</div>
+        <p>Some chocolate ice cream to help you feel refreshed.</p>
+        <button onclick="nextPage(9)">Next</button>
+    </div>
+
+    <div class="page" id="p9">
+        <div class="emoji">🍫</div>
+        <h1>Surprise!</h1>
+        <p>You deserve a chocolate shower. Tap the button!</p>
+        <button onclick="popChocolate()">POP CHOCOLATES! 🍫</button>
+        <br><br>
+        <button onclick="nextPage(10)" style="background:var(--milk-choc); font-size: 10px;">Next Page</button>
+    </div>
+
+    <div class="page" id="p10">
+        <div class="emoji">✨</div>
+        <p>Every little chocolate reminds me of a sweet memory with you.</p>
+        <button onclick="nextPage(11)">Next</button>
+    </div>
+
+    <div class="page" id="p11">
+        <div class="emoji">💧</div>
+        <p>Please drink lots of water and keep your strength up, Anvu.</p>
+        <button onclick="nextPage(12)">Next</button>
+    </div>
+
+    <div class="page" id="p12">
+        <div class="emoji">🧁</div>
+        <p>Life is much sweeter ever since you became a part of it.</p>
+        <button onclick="nextPage(13)">Next</button>
+    </div>
+
+    <div class="page" id="p13">
+        <div class="emoji">💖</div>
+        <h1>Anvu...</h1>
+        <p>I have three words that I mean from the bottom of my heart.</p>
+        <button onclick="nextPage(14)">Tell me</button>
+    </div>
+
+    <div class="page" id="p14">
+        <div class="emoji">🤟💗</div>
+        <h1>I Love You!!!</h1>
+        <p>More than all the chocolates in the world. Forever and always! ✨</p>
+
+                                                                          
