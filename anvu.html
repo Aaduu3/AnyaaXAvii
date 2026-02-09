@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Teddy Day 🧸</title>
+    <style>
+        /* 1. RESET & LOCK SCREEN */
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body { 
+            background-color: #fcf4dd; 
+            font-family: 'Arial', sans-serif; 
+            height: 100vh; 
+            width: 100vw;
+            overflow: hidden; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+        }
+
+        /* 2. BACKGROUND LAYER (Z-INDEX 1) */
+        #bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+        .float { position: absolute; bottom: -50px; color: rgba(139, 94, 60, 0.1); font-weight: bold; animation: rise 6s linear infinite; }
+        @keyframes rise { to { transform: translateY(-120vh) rotate(20deg); } }
+
+        /* 3. PAGE SYSTEM (Z-INDEX 10) */
+        .page { 
+            display: none; 
+            position: absolute; 
+            width: 100%; 
+            height: 100%; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            padding: 20px; 
+            z-index: 10;
+        }
+        .active { display: flex; }
+
+        /* 4. TEXT STYLES */
+        h1 { font-size: 2rem; color: #8b5e3c; margin-bottom: 15px; }
+        p { font-size: 1.1rem; color: #5d4037; max-width: 320px; margin-bottom: 30px; line-height: 1.5; }
+
+        /* 5. BUTTON STYLES */
+        .btn { 
+            padding: 15px 40px; 
+            background: #a67c52; 
+            color: white; 
+            border: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            z-index: 20;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* 6. FINAL CARD */
+        .card { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 25px; 
+            border: 4px solid #a67c52; 
+            width: 90%; 
+            max-width: 350px; 
+        }
+        .btn-group { display: flex; justify-content: center; gap: 10px; margin-top: 20px; min-height: 50px; }
+        #noBtn { background: #d7ccc8; color: #5d4037; padding: 10px 25px; border-radius: 50px; border: none; cursor: pointer; position: relative; }
+        #yesBtn { background: #8b5e3c; color: white; padding: 10px 25px; border-radius: 50px; border: none; cursor: pointer; }
+
+        .footer { position: absolute; bottom: 20px; color: #a67c52; font-weight: bold; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <div id="bg"></div>
+
+    <div class="page active" id="p1">
+        <h1>Happy Teddy Day, Anvuu! 🧸</h1>
+        <p>You are my favorite person to hug. I built this to remind you how much I love you.</p>
+        <button class="btn" onclick="nav(2)">Start Here →</button>
+        <div class="footer">1 / 15</div>
+    </div>
+
+    <div class="page" id="p2" style="background: #f5ebe0;">
+        <h1>My Human Teddy 🫠</h1>
+        <p>No teddy bear in the world is as soft, warm, or comforting as you are to me.</p>
+        <button class="btn" onclick="nav(3)">Next →</button>
+        <div class="footer">2 / 15</div>
+    </div>
+
+    <div class="page" id="p3">
+        <h1>Warmth & Peace</h1>
+        <p>Just like a teddy bear makes everything better, your presence makes all my worries disappear.</p>
+        <button class="btn" onclick="nav(4)">Next →</button>
+        <div class="footer">3 / 15</div>
+    </div>
+
+    <div class="page" id="p4" style="background: #e3d5ca;">
+        <h1>Your Strength</h1>
+        <p>I love how you are my protector and my soft place to land at the same time.</p>
+        <button class="btn" onclick="nav(5)">Next →</button>
+        <div class="footer">4 / 15</div>
+    </div>
+
+    <div class="page" id="p5">
+        <h1>That Smile 💗</h1>
+        <p>One smile from you gives me more comfort than a thousand hugs could ever do.</p>
+        <button class="btn" onclick="nav(6)">Next →</button>
+        <div class="footer">5 / 15</div>
+    </div>
+
+    <div class="page" id="p6" style="background: #8b5e3c;">
+        <h1 style="color:#fcf4dd">Best Friend</h1>
+        <p style="color:#fcf4dd">You are the person I want to tell everything to. My true partner.</p>
+        <button class="btn" style="background:#fcf4dd; color:#8b5e3c" onclick="nav(7)">Next →</button>
+        <div class="footer" style="color: white;">6 / 15</div>
+    </div>
+
+    <div class="page" id="p7">
+        <h1>The Small Things</h1>
+        <p>I love the way you check on me. It’s the smallest things that mean the most.</p>
+        <button class="btn" onclick="nav(8)">Next →</button>
+        <div class="footer">7 / 15</div>
+    </div>
+
+    <div class="page" id="p8" style="background: #d5bdaf;">
+        <h1>I Choose You</h1>
+        <p>Today, and every day after—I choose you as my forever hug.</p>
+        <button class="btn" onclick="nav(9)">Next →</button>
+        <div class="footer">8 / 15</div>
+    </div>
+
+    <div class="page" id="p9">
+        <h1>No Limits</h1>
+        <p>I Love You So Much!!!💗 More than all the teddy bears in the world.</p>
+        <button class="btn" onclick="nav(10)">Next →</button>
+        <div class="footer">9 / 15</div>
+    </div>
+
+    <div class="page" id="p10" style="background: #a67c52;">
+        <h1 style="color:white">Our Connection</h1>
+        <p style="color:white">We fit together perfectly. Like we were made for each other.</p>
+        <button class="btn" style="background:white; color:#a67c52" onclick="nav(11)">Next →</button>
+        <div class="footer" style="color: white;">10 / 15</div>
+    </div>
+
+    <div class="page" id="p11">
+        <h1>My Support</h1>
+        <p>Thank you for always being the shoulder I can lean on when things get tough.</p>
+        <button class="btn" onclick="nav(12)">Next →</button>
+        <div class="footer">11 / 15</div>
+    </div>
+
+    <div class="page" id="p12" style="background: #f5ebe0;">
+        <h1>Our Future 💍</h1>
+        <p>I can't wait for a lifetime of cuddles and building our world together.</p>
+        <button class="btn" onclick="nav(13)">Next →</button>
+        <div class="footer">12 / 15</div>
+    </div>
+
+    <div class="page" id="p13">
+        <h1>Simply You</h1>
+        <p>Anvuu, you are exactly who I need. Please never change who you are.</p>
+        <button class="btn" onclick="nav(14)">Next →</button>
+        <div class="footer">13 / 15</div>
+    </div>
+
+    <div class="page" id="p14">
+        <h1>Get Well Soon! 🩹</h1>
+        <p>Sending you a big virtual hug to help you feel better. Rest up, my love! 🧸✨</p>
+        <button class="btn" onclick="nav(15)">Last Page →</button>
+        <div class="footer">14 / 15</div>
+    </div>
+
+    <div class="page" id="p15">
+        <div class="card" id="qCard">
+            <h1>Yoo Anvuu!!!💗</h1>
+            <p>Will you be my forever cuddle partner?</p>
+            <div class="btn-group">
+                <button id="yesBtn" onclick="win()">Yes!</button>
+                <button id="noBtn" onmouseover="move()" onclick="move()">No</button>
+            </div>
+        </div>
+        <div id="yay" style="display:none">
+            <h1 style="font-size: 3rem;">💍🧸</h1>
+            <h1>I'M YOURS!</h1>
+            <p>Happy Teddy Day!!🫠<br>I Love You So Much!!!💗</p>
+        </div>
+        <div class="footer">15 / 15</div>
+    </div>
+
+    <script>
+        // NAVIGATION FIXED
+        function nav(num) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(p => p.classList.remove('active'));
+            document.getElementById('p' + num).classList.add('active');
+        }
+
+        // NO BUTTON FIXED
+        function move() {
+            const b = document.getElementById('noBtn');
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            b.style.position = 'fixed';
+            b.style.left = x + 'px';
+            b.style.top = y + 'px';
+        }
+
+        // CELEBRATION FIXED
+        function win() {
+            document.getElementById('qCard').style.display = 'none';
+            document.getElementById('yay').style.display = 'block';
+            for(let i=0; i<40; i++) {
+                setTimeout(() => {
+                    const d = document.createElement('div');
+                    d.innerHTML = '🧸';
+                    d.style.position = 'fixed';
+                    d.style.left = Math.random() * 100 + 'vw';
+                    d.style.top = '-50px';
+                    document.body.appendChild(d);
+                    d.animate([{transform:'translateY(0)'},{transform:'translateY(110vh)'}], 2500);
+                    setTimeout(() => d.remove(), 2500);
+                }, i * 100);
+            }
+        }
+
+        // BACKGROUND FIXED
+        setInterval(() => {
+            const s = document.createElement('div');
+            s.className = 'float';
+            s.innerHTML = '🧸';
+            s.style.left = Math.random() * 100 + 'vw';
+            document.getElementById('bg').appendChild(s);
+            setTimeout(() => s.remove(), 6000);
+        }, 1000);
+    </script>
+</body>
+          </html>
+          
